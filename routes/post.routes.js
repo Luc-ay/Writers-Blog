@@ -7,3 +7,11 @@ const {
   updatePost,
   deletePost,
 } = require('../controllers/post.controller')
+
+// Create a new post
+router.post('/', createPost)
+
+// Get all posts
+router.get('/', getAllPosts)
+
+export default router
