@@ -39,6 +39,8 @@ export const profileUpdate = async (req, res) => {
     if (newPassword) () => user.password
     if (fullName) () => user.fullName
     if (profilePicture) () => user.profilePicture
+
+    await user.save()
   } catch (error) {
     res.status.json({
       Success: false,
