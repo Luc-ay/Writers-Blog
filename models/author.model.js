@@ -14,15 +14,19 @@ const authorSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    required: true,
     trim: true,
-    required: true,
+    min: [6, 'Password should be atleast 6 characters']
   },
-  profilePicture: {
+  avatar: {
     type: String,
-    required: true,
     default: '',
   },
-})
+  post: {
+    type: Number,
+    default: 0,
+  },
+}, {timestamps: true})
 
 const Author = mongoose.model('Author', authorSchema)
 
